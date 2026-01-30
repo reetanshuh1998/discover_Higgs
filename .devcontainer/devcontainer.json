@@ -14,14 +14,10 @@
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/bin/python3",
-        "python.linting.enabled": true,
-        "python.linting.pylintEnabled": true,
-        "python.formatting.provider": "black",
         "jupyter.notebookFileRoot": "${workspaceFolder}"
       }
     }
   },
   "forwardPorts": [8888],
-  "postCreateCommand": "pip install --user jupyter numpy matplotlib scipy pandas uproot awkward",
   "remoteUser": "root"
 }

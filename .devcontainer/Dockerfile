@@ -1,5 +1,5 @@
-# Use ROOT official image which includes Python and ROOT
-FROM rootproject/root:latest
+# Use ROOT official image with a specific version for reproducibility
+FROM rootproject/root:6.28.10-ubuntu22.04
 
 # Install additional packages
 RUN apt-get update && apt-get install -y \
@@ -32,12 +32,6 @@ WORKDIR /workspace
 
 # Expose Jupyter port
 EXPOSE 8888
-
-# Set environment variables for ROOT
-ENV ROOTSYS=/usr/local
-ENV PATH=$ROOTSYS/bin:$PATH
-ENV LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH
-ENV PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
 
 # Default command
 CMD ["/bin/bash"]
